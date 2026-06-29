@@ -1,0 +1,6 @@
+{
+  "name": "Student Project & Task Manager",
+  "description": "An interactive student project and task manager featuring multi-language support, automated deadline checks, JWT authentication simulation, and MongoDB structure visualizer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

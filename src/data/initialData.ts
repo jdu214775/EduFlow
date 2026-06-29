@@ -7,7 +7,7 @@ export const initialProjects: Project[] = [
     description: 'React + Node.js (Express) を用いた、多言語対応・JWT認証付きのタスク管理アプリ開発',
     subject: 'システム開発実践演習 (Seminar IV)',
     progress: 75,
-    members: ['渡辺 陸 (Riku)', 'Sarah Smith', 'A. Rakhmatov'],
+    members: ['R. Rakhmatov', 'Sarah Smith'],
     tasksCount: { total: 4, completed: 3 },
   },
   {
@@ -16,7 +16,7 @@ export const initialProjects: Project[] = [
     description: '分散データベースのレプリケーション効率に関する研究論文の執筆とプレゼン資料の作成',
     subject: '卒業研究 (Graduation Research)',
     progress: 40,
-    members: ['渡辺 陸 (Riku)'],
+    members: ['R. Rakhmatov'],
     tasksCount: { total: 3, completed: 1 },
   },
   {
@@ -25,7 +25,7 @@ export const initialProjects: Project[] = [
     description: 'MongoDBとPostgreSQLのクエリ速度比較およびドキュメント設計の正規化・非正規化モデル評価',
     subject: 'データベース工学 (Database Engineering)',
     progress: 100,
-    members: ['佐藤 拓海 (Takumi)', '渡辺 陸 (Riku)', 'Elena Rostova'],
+    members: ['佐藤 拓海 (Takumi)', 'R. Rakhmatov', 'Elena Rostova'],
     tasksCount: { total: 2, completed: 2 },
   },
 ];
@@ -35,11 +35,11 @@ export const initialTasks: Task[] = [
     id: 't1',
     projectId: 'p1',
     title: '多言語言語パックの設定 (i18n core design)',
-    description: '日本語、英語、ウズベク語のキーマッピングの作成とUI切替ロジックの実装',
+    description: '日本語、英語、ウズベク語のキーマッピング of multi-language support',
     dueDate: '2026-06-25', // Completed past task
     status: 'done',
     priority: 'high',
-    assignedTo: 'A. Rakhmatov',
+    assignedTo: 'R. Rakhmatov',
   },
   {
     id: 't2',
@@ -49,7 +49,7 @@ export const initialTasks: Task[] = [
     dueDate: '2026-06-27', // Completed past task
     status: 'done',
     priority: 'high',
-    assignedTo: '渡辺 陸 (Riku)',
+    assignedTo: 'R. Rakhmatov',
   },
   {
     id: 't3',
@@ -69,7 +69,7 @@ export const initialTasks: Task[] = [
     dueDate: '2026-07-05', // Upcoming
     status: 'todo',
     priority: 'medium',
-    assignedTo: '渡辺 陸 (Riku)',
+    assignedTo: 'R. Rakhmatov',
   },
   {
     id: 't5',
@@ -79,7 +79,7 @@ export const initialTasks: Task[] = [
     dueDate: '2026-06-20', // Overdue!
     status: 'in_progress',
     priority: 'high',
-    assignedTo: '渡辺 陸 (Riku)',
+    assignedTo: 'R. Rakhmatov',
   },
   {
     id: 't6',
@@ -89,7 +89,7 @@ export const initialTasks: Task[] = [
     dueDate: '2026-07-02', // Upcoming
     status: 'todo',
     priority: 'medium',
-    assignedTo: '渡辺 陸 (Riku)',
+    assignedTo: 'R. Rakhmatov',
   },
   {
     id: 't7',
@@ -99,7 +99,7 @@ export const initialTasks: Task[] = [
     dueDate: '2026-06-24', // Done, but was overdue
     status: 'done',
     priority: 'high',
-    assignedTo: '渡辺 陸 (Riku)',
+    assignedTo: 'R. Rakhmatov',
   },
   {
     id: 't8',

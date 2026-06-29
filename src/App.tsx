@@ -4,15 +4,9 @@ import { translations } from './data/translations';
 import { initialProjects, initialTasks } from './data/initialData';
 import Dashboard from './components/Dashboard';
 import CronSimulator from './components/CronSimulator';
-import DatabaseVisualizer from './components/DatabaseVisualizer';
-import JwtPlayground from './components/JwtPlayground';
-import StrugglesReflections from './components/StrugglesReflections';
 import { 
   BookOpen, 
-  Database, 
-  ShieldCheck, 
   CalendarClock, 
-  FileText, 
   LayoutDashboard, 
   Bell,
   CheckCircle,
@@ -29,9 +23,9 @@ export default function App() {
   });
 
   // 2. Navigation State
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'cron' | 'db' | 'jwt' | 'report'>(() => {
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'cron'>(() => {
     const saved = localStorage.getItem('gakusei_tab');
-    return (saved as any) || 'dashboard';
+    return (saved === 'dashboard' || saved === 'cron' ? saved : 'dashboard');
   });
 
   // 3. Projects and Tasks State
@@ -176,45 +170,6 @@ export default function App() {
                 </span>
               )}
             </button>
-
-            <button
-              id="tab-db"
-              onClick={() => handleTabChange('db')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
-                activeTab === 'db'
-                  ? 'bg-indigo-50 text-indigo-700 font-semibold'
-                  : 'text-slate-600 hover:bg-slate-50 hover:text-slate-950'
-              }`}
-            >
-              <Database className="w-5 h-5 shrink-0" />
-              {t.dbDesign}
-            </button>
-
-            <button
-              id="tab-jwt"
-              onClick={() => handleTabChange('jwt')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
-                activeTab === 'jwt'
-                  ? 'bg-indigo-50 text-indigo-700 font-semibold'
-                  : 'text-slate-600 hover:bg-slate-50 hover:text-slate-950'
-              }`}
-            >
-              <ShieldCheck className="w-5 h-5 shrink-0" />
-              {t.jwtAuth}
-            </button>
-
-            <button
-              id="tab-report"
-              onClick={() => handleTabChange('report')}
-              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
-                activeTab === 'report'
-                  ? 'bg-indigo-50 text-indigo-700 font-semibold'
-                  : 'text-slate-600 hover:bg-slate-50 hover:text-slate-950'
-              }`}
-            >
-              <FileText className="w-5 h-5 shrink-0" />
-              {t.strugglesAndLearnings}
-            </button>
           </nav>
         </div>
 
@@ -222,11 +177,11 @@ export default function App() {
         <div className="p-4 border-t border-slate-100 bg-slate-50">
           <div className="flex items-center gap-3 px-2">
             <div className="w-10 h-10 rounded-full bg-indigo-200 border-2 border-white flex items-center justify-center font-bold text-indigo-700 font-mono text-sm shrink-0">
-              RW
+              RR
             </div>
             <div className="flex-1 overflow-hidden">
-              <p className="text-sm font-semibold truncate text-slate-800">Riku Watanabe</p>
-              <p className="text-xs text-slate-500 truncate">ID: 2026-4044</p>
+              <p className="text-sm font-semibold truncate text-slate-800">Rakhmatov Ravshanbek</p>
+              <p className="text-xs text-slate-500 truncate">ID: stud-ravshan-2026</p>
             </div>
           </div>
         </div>
@@ -290,53 +245,17 @@ export default function App() {
                       </span>
                     )}
                   </button>
-
-                  <button
-                    onClick={() => handleTabChange('db')}
-                    className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
-                      activeTab === 'db'
-                        ? 'bg-indigo-50 text-indigo-700'
-                        : 'text-slate-600 hover:bg-slate-50'
-                    }`}
-                  >
-                    <Database className="w-5 h-5" />
-                    {t.dbDesign}
-                  </button>
-
-                  <button
-                    onClick={() => handleTabChange('jwt')}
-                    className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
-                      activeTab === 'jwt'
-                        ? 'bg-indigo-50 text-indigo-700'
-                        : 'text-slate-600 hover:bg-slate-50'
-                    }`}
-                  >
-                    <ShieldCheck className="w-5 h-5" />
-                    {t.jwtAuth}
-                  </button>
-
-                  <button
-                    onClick={() => handleTabChange('report')}
-                    className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all font-medium ${
-                      activeTab === 'report'
-                        ? 'bg-indigo-50 text-indigo-700'
-                        : 'text-slate-600 hover:bg-slate-50'
-                    }`}
-                  >
-                    <FileText className="w-5 h-5" />
-                    {t.strugglesAndLearnings}
-                  </button>
                 </nav>
               </div>
 
               <div className="p-4 border-t border-slate-100 bg-slate-50">
                 <div className="flex items-center gap-3 px-2">
                   <div className="w-10 h-10 rounded-full bg-indigo-200 border-2 border-white flex items-center justify-center font-bold text-indigo-700 font-mono text-sm">
-                    RW
+                    RR
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-800">Riku Watanabe</p>
-                    <p className="text-xs text-slate-500">ID: 2026-4044</p>
+                    <p className="text-sm font-semibold text-slate-800">Rakhmatov Ravshanbek</p>
+                    <p className="text-xs text-slate-500">ID: stud-ravshan-2026</p>
                   </div>
                 </div>
               </div>
@@ -359,9 +278,6 @@ export default function App() {
             <h2 className="text-base lg:text-lg font-semibold text-slate-800 hidden sm:block">
               {activeTab === 'dashboard' && 'Campus Project Dashboard'}
               {activeTab === 'cron' && 'Deadline Services'}
-              {activeTab === 'db' && 'MongoDB Data Architecture'}
-              {activeTab === 'jwt' && 'JSON Web Token Security'}
-              {activeTab === 'report' && 'Theme ④ Submission Report'}
             </h2>
             <span className="px-2.5 py-0.5 rounded-full text-[10px] lg:text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1 shrink-0">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
@@ -445,27 +361,6 @@ export default function App() {
                   onClearNotifications={handleClearNotifications}
                   onMarkRead={handleMarkRead}
                   onDeleteNotification={handleDeleteNotification}
-                />
-              )}
-
-              {activeTab === 'db' && (
-                <DatabaseVisualizer
-                  lang={lang}
-                  t={t}
-                />
-              )}
-
-              {activeTab === 'jwt' && (
-                <JwtPlayground
-                  lang={lang}
-                  t={t}
-                />
-              )}
-
-              {activeTab === 'report' && (
-                <StrugglesReflections
-                  lang={lang}
-                  t={t}
                 />
               )}
             </motion.div>
